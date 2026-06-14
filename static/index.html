@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Job Recommendation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>AI Job <span class="highlight">Matcher</span></h1>
+            <p>Nhập kỹ năng, kinh nghiệm hoặc mô tả công việc mong muốn của bạn.</p>
+        </header>
+
+        <div class="glass-panel input-section">
+            <textarea id="user-profile" rows="4" placeholder="VD: Tôi có 3 năm kinh nghiệm Python, FastAPI, biết SQL và đam mê AI..."></textarea>
+            
+            <div class="controls">
+                <div class="slider-container">
+                    <label for="top-k">Số lượng: <span id="top-k-val">5</span></label>
+                    <input type="range" id="top-k" min="1" max="20" value="5">
+                </div>
+                <button id="recommend-btn" class="glow-btn">Tìm Việc Phù Hợp</button>
+            </div>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Đang phân tích và tìm kiếm...</p>
+        </div>
+
+        <div id="results" class="results-grid">
+            <!-- Cards will be injected here -->
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
