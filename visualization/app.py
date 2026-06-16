@@ -258,7 +258,7 @@ with st.sidebar:
         label_visibility="collapsed"
     )
     st.markdown("---")
-    st.markdown("<small style='color:#6060aa'>Dữ liệu: IT Job Market VN 2024</small>", unsafe_allow_html=True)
+    st.markdown("<small style='color:#6060aa'>Dữ liệu: IT Job Market VN</small>", unsafe_allow_html=True)
 
 # ─── HEADER ──────────────────────────────────────────────────────────────────────
 st.markdown("""
