@@ -1,0 +1,41 @@
+===========================================================================
+       PHAN BO CAP BAC CONG VIEC - THI TRUONG IT VIET NAM
+===========================================================================
+
+-- PHAN BO TONG THE THEO CAP BAC --
+Cap bac           So job   Ti le   Avg(M)  Median(M)  AvgYOE  AvgSkills
+---------------------------------------------------------------------------
+Undefined           1010   48.9%     32.9       31.8     3.1        4.8
+Senior               409   19.8%     46.2       41.9     4.9        4.8
+Junior               274   13.3%     19.7       19.1     1.2        4.0
+Manager              205    9.9%     55.4       53.3     5.0        4.6
+Lead                  95    4.6%     52.4       56.5     5.6        5.1
+Mid-level             29    1.4%     31.5       33.5     3.0        3.5
+Fresher               26    1.3%     13.0       11.4     3.9        4.7
+Junior/Fresher        16    0.8%     23.2       15.3     2.1        3.7
+
+-- PIVOT: NGUON TUYEN DUNG x CAP BAC --
+Nguon                   Fresher   Junior Junior/F     Lead  Manager Mid-leve   Senior Undefine    Total
+-------------------------------------------------------------------------------------------------------
+VietnamWorks                 18      196        0       41      142        0      163      607     1167
+ITviec                        8       19        0       51       63        0      217      403      761
+TopDev                        0       59       16        3        0       29       29        0      136
+
+-- TOP 15 CAP (NGUON, CAP BAC) NHIEU VIEC NHAT --
+  [VietnamWorks] Undefined   : 607 jobs, avg=32.3M, avg_yoe=3.0yr
+  [ITviec  ] Undefined   : 403 jobs, avg=33.8M, avg_yoe=3.2yr
+  [ITviec  ] Senior      : 217 jobs, avg=46.7M, avg_yoe=4.8yr
+  [VietnamWorks] Junior      : 196 jobs, avg=19.5M, avg_yoe=1.1yr
+  [VietnamWorks] Senior      : 163 jobs, avg=46.3M, avg_yoe=5.0yr
+  [VietnamWorks] Manager     : 142 jobs, avg=55.1M, avg_yoe=4.9yr
+  [ITviec  ] Manager     : 63 jobs, avg=56.2M, avg_yoe=5.3yr
+  [TopDev  ] Junior      : 59 jobs, avg=20.4M, avg_yoe=1.5yr
+  [ITviec  ] Lead        : 51 jobs, avg=54.0M, avg_yoe=5.8yr
+  [VietnamWorks] Lead        : 41 jobs, avg=50.1M, avg_yoe=5.5yr
+  [TopDev  ] Senior      : 29 jobs, avg=42.3M, avg_yoe=4.9yr
+  [TopDev  ] Mid-level   : 29 jobs, avg=31.5M, avg_yoe=3.0yr
+  [ITviec  ] Junior      : 19 jobs, avg=19.6M, avg_yoe=2.3yr
+  [VietnamWorks] Fresher     : 18 jobs, avg=11.6M, avg_yoe=4.0yr
+  [TopDev  ] Junior/Fresher: 16 jobs, avg=23.2M, avg_yoe=2.1yr
+
+Tong jobs phan tich: 2064

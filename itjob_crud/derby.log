@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Jun 16 17:22:15 ICT 2026:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-019e-cff4-0091-00001c404b10 
+on database directory /home/hadoop/metastore_db with class loader sun.misc.Launcher$AppClassLoader@c2e1f26 
+Loaded from file:/opt/itjob_crud/.venv/lib/python3.12/site-packages/pyspark/jars/derby-10.14.2.0.jar
+java.vendor=Private Build
+java.runtime.version=1.8.0_492-8u492-ga~us2-0ubuntu1~26.04.1-b09
+user.dir=/opt/itjob_crud
+os.name=Linux
+os.arch=amd64
+os.version=7.0.0-22-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

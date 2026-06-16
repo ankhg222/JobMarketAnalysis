@@ -1,0 +1,42 @@
+=== TOP 3 CONG VIEC LUONG CAO NHAT THEO TUNG CAP BAC ===
+
+
+--- FRESHER ---
+Top 1: 31.8 Triệu | Php Backend Developer Internal Tools, Yi | Cty: CÔNG TY TNHH NEXFUL
+Top 2: 16.5 Triệu | Cloud Devops Engineer Cds Open For Fresh | Cty: LG CNS Việt Nam
+Top 3: 14.0 Triệu | It Internal Auditor                      | Cty: ITviec Recruitment C
+
+--- JUNIOR ---
+Top 1: 56.1 Triệu | Golang Backend Engineer                  | Cty: CÔNG TY TNHH NEXLAB 
+Top 2: 50.8 Triệu | Chuyên Viên Phân Tích Nghiệp Vụ, Xây Dựn | Cty: Viettel Mozambique (
+Top 3: 38.0 Triệu | Database Administrator                   | Cty: CÔNG TY TNHH SOCOTEC
+
+--- JUNIOR/FRESHER ---
+Top 1: 50.0 Triệu | Kỹ Sư Phát Triển Phần Mềm                | Cty: AZAPA ENGINEERING
+Top 2: 32.5 Triệu | TRUNG TÂM ĐỔI MỚI SÁNG TẠO - DEVOPS      | Cty: Tổng Công ty Bưu điệ
+Top 3: 31.9 Triệu | Backend Developer                        | Cty: Công Ty TNHH NEXFUL
+
+--- LEAD ---
+Top 1: 88.9 Triệu | Technical Lead Golang Upto 3500          | Cty: Virtual Security Lab
+Top 2: 69.9 Triệu | Qa Team Lead                             | Cty: Nakivo
+Top 3: 69.9 Triệu | Viettel Solutions - Tech Lead            | Cty: Viettel Group
+
+--- MANAGER ---
+Top 1: 110.5 Triệu | Senior Project Manager - Id4352          | Cty: VPBank - Https://tuy
+Top 2: 101.6 Triệu | Enterprise Integration Architect Manager | Cty: Ngân Hàng Á Châu | A
+Top 3: 101.6 Triệu | Ip Portfolio Manager - Up To $4000       | Cty: FPT Software
+
+--- MID-LEVEL ---
+Top 1: 50.0 Triệu | DevOps Engineer                          | Cty: Công ty Cổ phần PayP
+Top 2: 40.0 Triệu | Web Developer                            | Cty: DaouKiwoom Innovatio
+Top 3: 33.5 Triệu | IT Customer Support Specialist           | Cty: Laidon Group
+
+--- SENIOR ---
+Top 1: 110.5 Triệu | Solution Architect Expert - Id4351       | Cty: VPBank - Https://tuy
+Top 2: 85.1 Triệu | Senior Python Developer                  | Cty: NSC Software
+Top 3: 81.3 Triệu | Mid/Senior .Net Engineer Airlines Domain | Cty: S4BT Solutions for B
+
+--- UNDEFINED ---
+Top 1: 127.0 Triệu | Solution Architect - Salary Up To 5000   | Cty: FPT Software
+Top 2: 127.0 Triệu | Solution Architect - Salary Up To $5000  | Cty: FPT Software
+Top 3: 114.3 Triệu | Hr Director                              | Cty: Sti - Simple Tech In

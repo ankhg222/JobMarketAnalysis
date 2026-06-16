@@ -1,0 +1,513 @@
+"""
+CRUD Operations trên Hive thông qua PySpark
+Create / Read / Update / Delete
+"""
+
+import logging
+import hashlib
+import uuid
+from datetime import datetime
+from typing import Optional, List, Dict, Any, Tuple
+
+import pandas as pd
+from pyspark.sql import DataFrame
+from pyspark.sql import functions as F
+from pyspark.sql.types import *
+
+from src.spark_client import get_spark
+import config
+
+logger = logging.getLogger(__name__)
+
+# ─── Schema for main table ──────────────────────────────────────────────────────
+JOB_SCHEMA = StructType([
+    StructField("id",               LongType(),   True),
+    StructField("source",           StringType(), True),
+    StructField("title_clean",      StringType(), True),
+    StructField("company",          StringType(), True),
+    StructField("salary",           StringType(), True),
+    StructField("salary_clean",     StringType(), True),
+    StructField("salary_min_vnd",   DoubleType(), True),
+    StructField("salary_max_vnd",   DoubleType(), True),
+    StructField("salary_final_vnd", DoubleType(), True),
+    StructField("is_AI_predicted",  IntegerType(),True),
+    StructField("impute_method",    StringType(), True),
+    StructField("location_clean",   StringType(), True),
+    StructField("is_remote",        IntegerType(),True),
+    StructField("job_level",        StringType(), True),
+    StructField("yoe_extracted",    DoubleType(), True),
+    StructField("skills_clean",     StringType(), True),
+    StructField("skill_count",      IntegerType(),True),
+    StructField("description_clean",StringType(), True),
+    StructField("url",              StringType(), True),
+    StructField("is_deleted",       IntegerType(),True),
+    StructField("created_at",       TimestampType(),True),
+    StructField("updated_at",       TimestampType(),True),
+])
+
+
+def _tbl(table: str = None) -> str:
+    """Full table name với database prefix."""
+    t = table or config.MAIN_TABLE
+    return f"{config.HIVE_DATABASE}.{t}"
+
+
+def _gen_id(text: str) -> int:
+    """Generate ID dựa trên content hash."""
+    return abs(int(hashlib.md5(text.encode()).hexdigest()[:8], 16))
+
+
+# ════════════════════════════════════════════════════════════════════════════════
+# CREATE
+# ════════════════════════════════════════════════════════════════════════════════
+
+def import_csv_to_hive(csv_path: str, overwrite: bool = False) -> Tuple[bool, int]:
+    """
+    Import CSV file vào Hive table.
+    
+    Args:
+        csv_path: Path đến CSV (local hoặc hdfs://)
+        overwrite: True = xóa data cũ trước khi import
+    
+    Returns:
+        (success, record_count)
+    """
+    spark = get_spark()
+    now = datetime.now()
+
+    try:
+        # Đọc CSV
+        df_raw = spark.read.csv(
+            csv_path,
+            header=True,
+            inferSchema=False,
+            multiLine=True,
+            escape='"',
+            encoding="utf-8"
+        )
+        logger.info(f"Read {df_raw.count()} rows from {csv_path}")
+
+        # Cast types + add metadata columns
+        df = (df_raw
+            .withColumn("id", F.abs(F.hash(
+                F.concat_ws("|",
+                    F.coalesce(F.col("title_clean"), F.lit("")),
+                    F.coalesce(F.col("company"), F.lit("")),
+                    F.coalesce(F.col("url"), F.lit(str(uuid.uuid4())))
+                )
+            )).cast(LongType()))
+            .withColumn("salary_min_vnd",    F.col("salary_min_vnd").cast(DoubleType()))
+            .withColumn("salary_max_vnd",    F.col("salary_max_vnd").cast(DoubleType()))
+            .withColumn("salary_final_vnd",  F.col("salary_final_vnd").cast(DoubleType()))
+            .withColumn("is_AI_predicted",   F.col("is_AI_predicted").cast(IntegerType()))
+            .withColumn("is_remote",         F.col("is_remote").cast(IntegerType()))
+            .withColumn("yoe_extracted",     F.col("yoe_extracted").cast(DoubleType()))
+            .withColumn("skill_count",       F.col("skill_count").cast(IntegerType()))
+            .withColumn("is_deleted",        F.lit(0))
+            .withColumn("created_at",        F.lit(now).cast(TimestampType()))
+            .withColumn("updated_at",        F.lit(now).cast(TimestampType()))
+        )
+
+        # Chọn đúng columns theo schema
+        df = df.select([f.name for f in JOB_SCHEMA])
+
+        count = df.count()
+
+        if overwrite:
+            spark.sql(f"TRUNCATE TABLE {_tbl()}")
+            df.write.mode("append").insertInto(_tbl())
+        else:
+            # Chỉ insert rows chưa có (dựa vào id)
+            existing_ids = spark.sql(
+                f"SELECT id FROM {_tbl()} WHERE is_deleted = 0"
+            ).select("id")
+            df_new = df.join(existing_ids, on="id", how="left_anti")
+            new_count = df_new.count()
+            df_new.write.mode("append").insertInto(_tbl())
+            count = new_count
+
+        logger.info(f"Imported {count} records to {_tbl()}")
+        return True, count
+
+    except Exception as e:
+        logger.error(f"Import failed: {e}")
+        raise
+
+
+def insert_one(record: dict) -> int:
+    """
+    Thêm 1 record mới. Trả về id được tạo.
+    """
+    spark = get_spark()
+    now = datetime.now()
+
+    # Generate ID
+    key = f"{record.get('title_clean','')}{record.get('company','')}{uuid.uuid4()}"
+    record["id"] = _gen_id(key)
+    record["is_deleted"] = 0
+    record["created_at"] = now
+    record["updated_at"] = now
+
+    # Fill missing columns
+    for field in JOB_SCHEMA:
+        if field.name not in record:
+            record[field.name] = None
+
+    df = spark.createDataFrame([record], schema=JOB_SCHEMA)
+    df.write.mode("append").insertInto(_tbl())
+    logger.info(f"Inserted record id={record['id']}")
+    return record["id"]
+
+
+# ════════════════════════════════════════════════════════════════════════════════
+# READ
+# ════════════════════════════════════════════════════════════════════════════════
+
+def read_jobs(
+    filters: Dict[str, Any] = None,
+    search_text: str = "",
+    page: int = 1,
+    page_size: int = config.PAGE_SIZE,
+    sort_col: str = "id",
+    sort_asc: bool = True,
+    include_deleted: bool = False
+) -> Tuple[pd.DataFrame, int]:
+    """
+    Đọc jobs với filtering, search, pagination.
+    
+    Returns: (dataframe, total_count)
+    """
+    spark = get_spark()
+    spark.sql(f"USE {config.HIVE_DATABASE}")
+
+    df = spark.table(_tbl())
+
+    if not include_deleted:
+        df = df.filter(F.col("is_deleted") == 0)
+
+    # Search text
+    if search_text:
+        st = search_text.strip()
+        df = df.filter(
+            F.col("title_clean").contains(st) |
+            F.col("company").contains(st) |
+            F.col("skills_clean").contains(st) |
+            F.col("description_clean").contains(st)
+        )
+
+    # Filters
+    if filters:
+        if filters.get("location"):
+            locs = filters["location"]
+            if isinstance(locs, list) and locs:
+                df = df.filter(
+                    F.col("location_clean").isin(locs) |
+                    F.col("location_clean").contains(locs[0] if len(locs) == 1 else "")
+                )
+
+        if filters.get("job_level"):
+            df = df.filter(F.col("job_level").isin(filters["job_level"]))
+
+        if filters.get("is_remote") is not None:
+            df = df.filter(F.col("is_remote") == int(filters["is_remote"]))
+
+        if filters.get("source"):
+            df = df.filter(F.col("source").isin(filters["source"]))
+
+        sal_min = filters.get("salary_min")
+        sal_max = filters.get("salary_max")
+        if sal_min is not None:
+            df = df.filter(
+                F.col("salary_final_vnd").isNull() |
+                (F.col("salary_final_vnd") >= sal_min)
+            )
+        if sal_max is not None and sal_max > 0:
+            df = df.filter(
+                F.col("salary_final_vnd").isNull() |
+                (F.col("salary_final_vnd") <= sal_max)
+            )
+
+        yoe_min = filters.get("yoe_min")
+        yoe_max = filters.get("yoe_max")
+        if yoe_min is not None:
+            df = df.filter(F.col("yoe_extracted") >= yoe_min)
+        if yoe_max is not None and yoe_max > 0:
+            df = df.filter(F.col("yoe_extracted") <= yoe_max)
+
+        if filters.get("skills"):
+            for skill in filters["skills"]:
+                df = df.filter(F.lower(F.col("skills_clean")).contains(skill.lower()))
+
+    total = df.count()
+
+    # Sort
+    if sort_asc:
+        df = df.orderBy(F.col(sort_col).asc_nulls_last())
+    else:
+        df = df.orderBy(F.col(sort_col).desc_nulls_last())
+
+    # Pagination
+    offset = (page - 1) * page_size
+    pdf = df.limit(offset + page_size).toPandas()
+    pdf = pdf.iloc[offset:offset + page_size]
+
+    return pdf, total
+
+
+def get_by_id(job_id: int) -> Optional[dict]:
+    """Lấy 1 record theo id."""
+    spark = get_spark()
+    rows = spark.sql(
+        f"SELECT * FROM {_tbl()} WHERE id = {job_id} AND is_deleted = 0"
+    ).collect()
+    if rows:
+        return rows[0].asDict()
+    return None
+
+
+def get_stats() -> dict:
+    """Thống kê tổng quan."""
+    spark = get_spark()
+    spark.sql(f"USE {config.HIVE_DATABASE}")
+
+    df = spark.table(_tbl()).filter(F.col("is_deleted") == 0)
+
+    stats = df.agg(
+        F.count("id").alias("total"),
+        F.countDistinct("company").alias("companies"),
+        F.countDistinct("location_clean").alias("locations"),
+        F.avg("salary_final_vnd").alias("avg_salary"),
+        F.max("salary_final_vnd").alias("max_salary"),
+        F.min("salary_final_vnd").alias("min_salary"),
+        F.avg("yoe_extracted").alias("avg_yoe"),
+    ).collect()[0].asDict()
+
+    # By level
+    by_level = (df.groupBy("job_level")
+                  .count()
+                  .orderBy("count", ascending=False)
+                  .toPandas())
+
+    # By location
+    by_location = (df.groupBy("location_clean")
+                     .count()
+                     .orderBy("count", ascending=False)
+                     .limit(10)
+                     .toPandas())
+
+    # By source
+    by_source = (df.groupBy("source")
+                   .count()
+                   .orderBy("count", ascending=False)
+                   .toPandas())
+
+    return {
+        "summary": stats,
+        "by_level": by_level,
+        "by_location": by_location,
+        "by_source": by_source,
+    }
+
+
+# ════════════════════════════════════════════════════════════════════════════════
+# UPDATE
+# ════════════════════════════════════════════════════════════════════════════════
+
+def update_one(job_id: int, updates: dict) -> bool:
+    """
+    Update 1 record.
+    Hive không hỗ trợ UPDATE trực tiếp nên dùng CTAS (Create Table As Select).
+    """
+    spark = get_spark()
+    spark.sql(f"USE {config.HIVE_DATABASE}")
+
+    now = datetime.now()
+    updates["updated_at"] = now
+    updates["id"] = job_id
+
+    # Đọc record hiện tại
+    current = get_by_id(job_id)
+    if not current:
+        logger.warning(f"Record {job_id} not found")
+        return False
+
+    # Merge updates
+    merged = {**current, **updates}
+
+    # Xóa record cũ trong memory, tạo lại với giá trị mới
+    # Dùng temp table approach
+    temp_table = f"_temp_update_{job_id}"
+    
+    new_row = spark.createDataFrame([merged], schema=JOB_SCHEMA)
+    new_row.createOrReplaceTempView(temp_table)
+
+    # CTAS: rebuild table với record mới thay thế record cũ
+    spark.sql(f"""
+        INSERT OVERWRITE TABLE {_tbl()}
+        SELECT * FROM {_tbl()} WHERE id != {job_id} AND is_deleted = 0
+        UNION ALL
+        SELECT * FROM {temp_table}
+    """)
+
+    logger.info(f"Updated record id={job_id}")
+    return True
+
+
+def bulk_update_field(ids: List[int], field: str, value: Any) -> int:
+    """Bulk update 1 field cho nhiều records."""
+    spark = get_spark()
+    spark.sql(f"USE {config.HIVE_DATABASE}")
+
+    now = datetime.now()
+    ids_str = ",".join(str(i) for i in ids)
+
+    # Hive: dùng CASE WHEN
+    spark.sql(f"""
+        INSERT OVERWRITE TABLE {_tbl()}
+        SELECT 
+            id, source, title_clean, company, salary, salary_clean,
+            salary_min_vnd, salary_max_vnd, salary_final_vnd,
+            is_AI_predicted, impute_method, location_clean, is_remote,
+            job_level, yoe_extracted, skills_clean, skill_count,
+            description_clean, url, is_deleted,
+            created_at,
+            CASE WHEN id IN ({ids_str}) 
+                 THEN TIMESTAMP('{now}') 
+                 ELSE updated_at END AS updated_at,
+            CASE WHEN id IN ({ids_str})
+                 THEN '{value}'
+                 ELSE {field} END AS {field}
+        FROM {_tbl()}
+        WHERE is_deleted = 0
+    """)
+    return len(ids)
+
+
+# ════════════════════════════════════════════════════════════════════════════════
+# DELETE
+# ════════════════════════════════════════════════════════════════════════════════
+
+def soft_delete(job_id: int, reason: str = "") -> bool:
+    """Soft delete - đánh dấu is_deleted=1, lưu vào deleted table."""
+    spark = get_spark()
+    spark.sql(f"USE {config.HIVE_DATABASE}")
+
+    now = datetime.now()
+
+    # Lưu vào deleted table
+    spark.sql(f"""
+        INSERT INTO TABLE {_tbl(config.DELETED_TABLE)}
+        SELECT id, source, title_clean, company, salary, salary_clean,
+               salary_min_vnd, salary_max_vnd, salary_final_vnd,
+               is_AI_predicted, impute_method, location_clean, is_remote,
+               job_level, yoe_extracted, skills_clean, skill_count,
+               description_clean, url,
+               TIMESTAMP('{now}') AS deleted_at,
+               '{reason}' AS deleted_reason
+        FROM {_tbl()}
+        WHERE id = {job_id} AND is_deleted = 0
+    """)
+
+    # Mark as deleted
+    spark.sql(f"""
+        INSERT OVERWRITE TABLE {_tbl()}
+        SELECT id, source, title_clean, company, salary, salary_clean,
+               salary_min_vnd, salary_max_vnd, salary_final_vnd,
+               is_AI_predicted, impute_method, location_clean, is_remote,
+               job_level, yoe_extracted, skills_clean, skill_count,
+               description_clean, url,
+               CASE WHEN id = {job_id} THEN 1 ELSE is_deleted END AS is_deleted,
+               created_at,
+               CASE WHEN id = {job_id} THEN TIMESTAMP('{now}') 
+                    ELSE updated_at END AS updated_at
+        FROM {_tbl()}
+    """)
+
+    logger.info(f"Soft deleted record id={job_id}")
+    return True
+
+
+def bulk_soft_delete(ids: List[int], reason: str = "") -> int:
+    """Xóa nhiều records cùng lúc."""
+    spark = get_spark()
+    now = datetime.now()
+    ids_str = ",".join(str(i) for i in ids)
+
+    spark.sql(f"USE {config.HIVE_DATABASE}")
+
+    spark.sql(f"""
+        INSERT INTO TABLE {_tbl(config.DELETED_TABLE)}
+        SELECT id, source, title_clean, company, salary, salary_clean,
+               salary_min_vnd, salary_max_vnd, salary_final_vnd,
+               is_AI_predicted, impute_method, location_clean, is_remote,
+               job_level, yoe_extracted, skills_clean, skill_count,
+               description_clean, url,
+               TIMESTAMP('{now}') AS deleted_at,
+               '{reason}' AS deleted_reason
+        FROM {_tbl()}
+        WHERE id IN ({ids_str}) AND is_deleted = 0
+    """)
+
+    spark.sql(f"""
+        INSERT OVERWRITE TABLE {_tbl()}
+        SELECT id, source, title_clean, company, salary, salary_clean,
+               salary_min_vnd, salary_max_vnd, salary_final_vnd,
+               is_AI_predicted, impute_method, location_clean, is_remote,
+               job_level, yoe_extracted, skills_clean, skill_count,
+               description_clean, url,
+               CASE WHEN id IN ({ids_str}) THEN 1 ELSE is_deleted END AS is_deleted,
+               created_at,
+               CASE WHEN id IN ({ids_str}) THEN TIMESTAMP('{now}') 
+                    ELSE updated_at END AS updated_at
+        FROM {_tbl()}
+    """)
+
+    logger.info(f"Bulk soft deleted {len(ids)} records")
+    return len(ids)
+
+
+def restore_deleted(job_id: int) -> bool:
+    """Phục hồi soft-deleted record."""
+    spark = get_spark()
+    spark.sql(f"USE {config.HIVE_DATABASE}")
+    now = datetime.now()
+
+    spark.sql(f"""
+        INSERT OVERWRITE TABLE {_tbl()}
+        SELECT id, source, title_clean, company, salary, salary_clean,
+               salary_min_vnd, salary_max_vnd, salary_final_vnd,
+               is_AI_predicted, impute_method, location_clean, is_remote,
+               job_level, yoe_extracted, skills_clean, skill_count,
+               description_clean, url,
+               CASE WHEN id = {job_id} THEN 0 ELSE is_deleted END AS is_deleted,
+               created_at,
+               CASE WHEN id = {job_id} THEN TIMESTAMP('{now}')
+                    ELSE updated_at END AS updated_at
+        FROM {_tbl()}
+    """)
+
+    logger.info(f"Restored record id={job_id}")
+    return True
+
+
+def hard_delete(job_id: int) -> bool:
+    """Xóa vĩnh viễn. KHÔNG thể undo."""
+    spark = get_spark()
+    spark.sql(f"USE {config.HIVE_DATABASE}")
+
+    spark.sql(f"""
+        INSERT OVERWRITE TABLE {_tbl()}
+        SELECT * FROM {_tbl()} WHERE id != {job_id}
+    """)
+    logger.warning(f"HARD DELETED record id={job_id}")
+    return True
+
+
+def get_deleted_records(limit: int = 100) -> pd.DataFrame:
+    """Lấy danh sách records đã soft-delete."""
+    spark = get_spark()
+    spark.sql(f"USE {config.HIVE_DATABASE}")
+    return (spark.table(_tbl(config.DELETED_TABLE))
+                 .orderBy(F.col("deleted_at").desc())
+                 .limit(limit)
+                 .toPandas())

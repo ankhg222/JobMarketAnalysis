@@ -1,0 +1,63 @@
+=== OLAP CUBE: PHAN TICH DA CHIEU (LOCATION x LEVEL x REMOTE) ===
+Su dung lenh .cube() de tao ra 8 cap do Tong hop (Sub-totals & Grand-totals)
+
+LOCATION   | LEVEL      | REMOTE     | SO JOB   | LUONG TB (M)
+-----------------------------------------------------------------
+ALL        | ALL        | ALL        | 2064     | 36.6
+ALL        | ALL        | On-site    | 2039     | 36.6
+ALL        | ALL        | Remote     | 25       | 36.5
+ALL        | Fresher    | ALL        | 26       | 13.0
+ALL        | Fresher    | On-site    | 26       | 13.0
+ALL        | Junior     | ALL        | 274      | 19.7
+ALL        | Junior     | On-site    | 274      | 19.7
+ALL        | Manager    | ALL        | 205      | 55.4
+ALL        | Manager    | On-site    | 202      | 55.4
+ALL        | Manager    | Remote     | 3        | 53.3
+ALL        | Other      | ALL        | 1150     | 34.3
+ALL        | Other      | On-site    | 1129     | 34.3
+ALL        | Other      | Remote     | 21       | 33.7
+ALL        | Senior     | ALL        | 409      | 46.2
+ALL        | Senior     | On-site    | 408      | 46.2
+ALL        | Senior     | Remote     | 1        | 45.8
+HCM        | ALL        | ALL        | 1059     | 37.7
+HCM        | ALL        | On-site    | 1040     | 37.7
+HCM        | ALL        | Remote     | 19       | 35.3
+HCM        | Fresher    | ALL        | 16       | 12.4
+HCM        | Fresher    | On-site    | 16       | 12.4
+HCM        | Junior     | ALL        | 92       | 20.3
+HCM        | Junior     | On-site    | 92       | 20.3
+HCM        | Manager    | ALL        | 121      | 54.3
+HCM        | Manager    | On-site    | 118      | 54.3
+HCM        | Manager    | Remote     | 3        | 53.3
+HCM        | Other      | ALL        | 598      | 35.5
+HCM        | Other      | On-site    | 583      | 35.6
+HCM        | Other      | Remote     | 15       | 31.0
+HCM        | Senior     | ALL        | 232      | 43.3
+HCM        | Senior     | On-site    | 231      | 43.3
+HCM        | Senior     | Remote     | 1        | 45.8
+HN         | ALL        | ALL        | 966      | 35.3
+HN         | ALL        | On-site    | 962      | 35.3
+HN         | ALL        | Remote     | 4        | 32.2
+HN         | Fresher    | ALL        | 10       | 14.1
+HN         | Fresher    | On-site    | 10       | 14.1
+HN         | Junior     | ALL        | 177      | 19.2
+HN         | Junior     | On-site    | 177      | 19.2
+HN         | Manager    | ALL        | 79       | 59.4
+HN         | Manager    | On-site    | 79       | 59.4
+HN         | Other      | ALL        | 530      | 32.8
+HN         | Other      | On-site    | 526      | 32.8
+HN         | Other      | Remote     | 4        | 32.2
+HN         | Senior     | ALL        | 170      | 50.0
+HN         | Senior     | On-site    | 170      | 50.0
+Other      | ALL        | ALL        | 39       | 37.2
+Other      | ALL        | On-site    | 37       | 36.2
+Other      | ALL        | Remote     | 2        | 56.9
+Other      | Junior     | ALL        | 5        | 22.1
+Other      | Junior     | On-site    | 5        | 22.1
+Other      | Manager    | ALL        | 5        | 19.1
+Other      | Manager    | On-site    | 5        | 19.1
+Other      | Other      | ALL        | 22       | 40.0
+Other      | Other      | On-site    | 20       | 38.4
+Other      | Other      | Remote     | 2        | 56.9
+Other      | Senior     | ALL        | 7        | 52.3
+Other      | Senior     | On-site    | 7        | 52.3

@@ -1,0 +1,22 @@
+========================================================================
+  TOP 15 KY NANG CO MUC LUONG TRUNG BINH CAO NHAT
+  (Chi tinh skill xuat hien >= 10 job)
+========================================================================
+#    Ky nang                       So job  Avg (M)  Median (M)  Max (M)
+------------------------------------------------------------------------
+1    leadership                        44    52.52       56.52    88.90
+2    team management                   52    50.52       53.34    95.25
+3    nosql                             11    50.07       50.00   127.00
+4    software architecture             26    46.77       40.64    95.25
+5    project management               117    46.55       53.34    88.87
+6    stakeholder management            24    46.36       53.34    76.20
+7    solution architecture             35    45.58       31.75   127.00
+8    kafka                             16    45.24       40.64   101.60
+9    japanese                          25    44.73       40.64    76.20
+10   aws                              106    44.64       40.64   127.00
+11   risk management                   18    44.40       40.64    59.69
+12   system architecture               22    44.28       50.00   101.60
+13   data management                   13    43.23       50.00    59.69
+14   product owner                     20    42.79       38.10    63.50
+15   generative ai                     17    42.68       38.10    76.20
+========================================================================

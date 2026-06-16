@@ -1,0 +1,53 @@
+=== PHAT HIEN BAT THUONG: LUONG CAO DOT BIEN (OUTLIERS) ===
+(Nhung job tra luong vuot qua nguong tran - Upper Bound cua thi truong)
+
+[Undefined ] 127.0M (Tran:  31.8M) | Cty: FPT Software              | Solution Architect - Salary Up To 5
+[Undefined ] 127.0M (Tran:  31.8M) | Cty: FPT Software              | Solution Architect - Salary Up To $
+[Undefined ] 114.3M (Tran:  31.8M) | Cty: Sti - Simple Tech Investm | Hr Director
+[Manager   ] 110.5M (Tran:  69.2M) | Cty: VPBank - Https://tuyendun | Senior Project Manager - Id4352
+[Senior    ] 110.5M (Tran:  64.0M) | Cty: VPBank - Https://tuyendun | Solution Architect Expert - Id4351
+[Manager   ] 101.6M (Tran:  69.2M) | Cty: Ngân Hàng Á Châu | ACB    | Enterprise Integration Architect Ma
+[Undefined ] 101.6M (Tran:  31.8M) | Cty: Virtuos Studios In Vietna | Principle Full-Stack Engineer
+[Manager   ] 101.6M (Tran:  69.2M) | Cty: FPT Software              | Ip Portfolio Manager - Up To $4000
+[Manager   ] 101.6M (Tran:  69.2M) | Cty: Công Ty Cổ Phần Tập Đoàn  | Giám Đốc Cntt
+[Undefined ]  95.3M (Tran:  31.8M) | Cty: Viettel Group             | Viettel Solutions - Solutions Archi
+[Manager   ]  88.9M (Tran:  69.2M) | Cty: One Mount Group           | Hn Expert/Manager Software Engineer
+[Lead      ]  88.9M (Tran:  72.7M) | Cty: Virtual Security Lab Cybe | Technical Lead Golang Upto 3500
+[Manager   ]  88.9M (Tran:  69.2M) | Cty: Nakivo                    | Senior Qa Manager
+[Manager   ]  88.9M (Tran:  69.2M) | Cty: Viettel Group             | Viettel Solutions - Project Manager
+[Senior    ]  85.1M (Tran:  64.0M) | Cty: NSC Software              | Senior Python Developer
+[Senior    ]  81.3M (Tran:  64.0M) | Cty: S4BT Solutions for Busine | Mid/Senior .Net Engineer Airlines D
+[Senior    ]  81.3M (Tran:  64.0M) | Cty: Rakuten Fintech Vietnam C | Mid/Senior Ios Developer - English 
+[Manager   ]  80.0M (Tran:  69.2M) | Cty: Công ty Cổ phần An ninh M | Head Of Security Service
+[Manager   ]  77.5M (Tran:  69.2M) | Cty: Nakivo                    | Website Developer Manager Php Techn
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: KMS Technology            | Software Test Engineer All Levels
+[Manager   ]  76.2M (Tran:  69.2M) | Cty: CODE88 COMPANY LIMITED    | Devops Lead/ Manager Strong Aws
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: Saigon Technology         | Middle Manual Qc Engineer
+[Senior    ]  76.2M (Tran:  64.0M) | Cty: Alpaca Vietnam            | Middle/Senior Business Analyst Bank
+[Senior    ]  76.2M (Tran:  64.0M) | Cty: CÔNG TY CỔ PHẦN CÔNG NGHỆ | Senior/Junior Ai Engineer Python, G
+[Senior    ]  76.2M (Tran:  64.0M) | Cty: CÔNG TY CỔ PHẦN CÔNG NGHỆ | Junior/Senior Software Developer Oo
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: Neos Việt Nam             | Javascript Engineer Remote Cho Cong
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: Giftee Tech Vietnam       | Fullstack Developer Ruby On Rails/ 
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: ONE Tech Stop Vietnam Com | Technical Architect
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: ONE Tech Stop Vietnam Com | / Ui/Ux Designer
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: Laidon Group              | It Business Analyst English-Require
+[Manager   ]  76.2M (Tran:  69.2M) | Cty: MISA Jointstock Company   | Product Manager Upto $3000
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: Citek Technology Joint-St | Sap Consultant
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: Công Ty TNHH Công Nghệ Hu | Rf Engineer
+[Undefined ]  76.2M (Tran:  31.8M) | Cty: Motoniq Inc               | Robotics Ai Engineer
+[Senior    ]  73.7M (Tran:  64.0M) | Cty: Cartrack                  | Senior Embedded Software C++ Develo
+[Senior    ]  70.0M (Tran:  64.0M) | Cty: CÔNG TY TNHH ROOSTERX GLO | Senior Ai Engineer Machine Learning
+[Senior    ]  70.0M (Tran:  64.0M) | Cty: CÔNG TY CỔ PHẦN CÔNG NGHỆ | PM/Delivery Manager/CTO
+[Senior    ]  69.9M (Tran:  64.0M) | Cty: Cartrack                  | Senior Embedded C++ Developer
+[Senior    ]  69.9M (Tran:  64.0M) | Cty: Flodesk                   | Mid To Senior Backend Developer Gol
+[Senior    ]  69.9M (Tran:  64.0M) | Cty: Flodesk                   | Mid/Senior Frontend Developer React
+[Manager   ]  69.9M (Tran:  69.2M) | Cty: NGÂN HÀNG THƯƠNG MẠI TNHH | It Project Manager - Quan Ly Du An 
+[Undefined ]  69.9M (Tran:  31.8M) | Cty: Ngân Hàng TNHH MTV Kỷ Ngu | Trưởng Phòng An Ninh Thông Tin
+[Undefined ]  69.9M (Tran:  31.8M) | Cty: Navigos Search            | Production Director Based Tiền Gian
+[Undefined ]  68.6M (Tran:  31.8M) | Cty: FPT Software              | Data Engineer - Up To $2700
+[Undefined ]  67.0M (Tran:  31.8M) | Cty: Navigos Search            | [Ngành Thời Trang] Trưởng Nhóm Qa Q
+[Undefined ]  66.1M (Tran:  31.8M) | Cty: Công Ty Ô Tô Toyota Việt  | Kỹ Sư Công Nghệ Thông Tin
+[Undefined ]  63.5M (Tran:  31.8M) | Cty: Virtual Security Lab Cybe | Security Solution Architect Network
+[Undefined ]  63.5M (Tran:  31.8M) | Cty: AdvaHealth Solutions      | Backend Developer Java Spring Boot 
+[Undefined ]  63.5M (Tran:  31.8M) | Cty: Zen8Labs                  | Full-Stack Software Engineer Java, 
+[Undefined ]  63.5M (Tran:  31.8M) | Cty: CCStorages                | Full Stack Developer – Long‑Term Pr

@@ -1,0 +1,14 @@
+location_clean                                 count
+-----------------------------------------------------
+Hồ Chí Minh                                     1007
+Hà Nội                                           964
+Đà Nẵng                                           31
+Hồ Chí Minh, Hà Nội                               31
+Hồ Chí Minh, Đà Nẵng                              15
+Khác                                               6
+Hồ Chí Minh, Hà Nội, Remote                        3
+Hồ Chí Minh, Remote                                2
+Remote                                             2
+Hà Nội, Đà Nẵng                                    1
+Hà Nội, Đà Nẵng, Remote                            1
+Hồ Chí Minh, Hà Nội, Đà Nẵng, Remote               1

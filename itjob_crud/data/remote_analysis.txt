@@ -1,0 +1,35 @@
+======================================================================
+   PHAN TICH REMOTE vs ON-SITE - THI TRUONG IT VIET NAM
+======================================================================
+
+-- TONG QUAN --
+Loai          So job   Ti le   Avg(M)  Median(M)  Avg Skills  Avg YOE
+----------------------------------------------------------------------
+On-site         2039   98.8%     36.6       31.8         4.6      3.5
+Remote            25    1.2%     36.5       31.8         5.2      3.8
+
+-- BREAKDOWN THEO CAP BAC --
+Cap bac           Remote   On-site  AvgRemote(M)  AvgOnsite(M)
+--------------------------------------------------------------
+Undefined             18       992          29.8          32.9
+Senior                 1       408          45.8          46.2
+Junior                 0       274           N/A          19.7
+Manager                3       202          53.3          55.4
+Lead                   2        93          60.1          52.2
+Mid-level              0        29           N/A          31.5
+Fresher                0        26           N/A          13.0
+Junior/Fresher         1        15          50.0          21.4
+
+-- TOP 10 KY NANG PHO BIEN TRONG JOB REMOTE --
+   1. english                      8 jobs
+   2. python                       4 jobs
+   3. javascript                   2 jobs
+   4. typescript                   2 jobs
+   5. embedded                     2 jobs
+   6. pytorch                      2 jobs
+   7. aweplus cx solution          2 jobs
+   8. figma                        2 jobs
+   9. growth mindset               2 jobs
+  10. customer service             2 jobs
+
+Tong job phan tich: 2064

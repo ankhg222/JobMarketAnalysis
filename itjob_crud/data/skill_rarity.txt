@@ -1,0 +1,56 @@
+=== SKILL RARITY (IDF SCORE) ===
+Tong so job (N) = 2060
+(Diem IDF cao nhat -> Ky nang hiem, dac thu nhat thi truong)
+
+SKILL                     | SO JOB XUAT HIEN (DF)     | DIEM DO HIEM (IDF)  
+---------------------------------------------------------------------------
+ 1. salesforce            | 5                         | 6.021
+ 2. quản trị hệ thống mạng | 5                         | 6.021
+ 3. jenkins               | 5                         | 6.021
+ 4. thiết kế hệ thống     | 5                         | 6.021
+ 5. lập kế hoạch          | 5                         | 6.021
+ 6. sales strategy        | 5                         | 6.021
+ 7. it knowledge          | 5                         | 6.021
+ 8. bảo mật thông tin     | 5                         | 6.021
+ 9. collaboration         | 5                         | 6.021
+10. presales technical    | 5                         | 6.021
+11. database design       | 5                         | 6.021
+12. data architecture     | 5                         | 6.021
+13. full-stack            | 5                         | 6.021
+14. sales planning        | 5                         | 6.021
+15. clean architecture    | 5                         | 6.021
+16. interaction design    | 5                         | 6.021
+17. plc                   | 5                         | 6.021
+18. oracle database       | 5                         | 6.021
+19. penetration testing   | 5                         | 6.021
+20. senior manager - erp  | 5                         | 6.021
+21. security management   | 5                         | 6.021
+22. firmware engineer     | 5                         | 6.021
+23. full stack development | 5                         | 6.021
+24. back-end              | 5                         | 6.021
+25. front-end             | 5                         | 6.021
+26. graphql               | 5                         | 6.021
+27. ccnp                  | 5                         | 6.021
+28. bảo mật dữ liệu       | 5                         | 6.021
+29. điều phối dự án       | 5                         | 6.021
+30. data engineering      | 5                         | 6.021
+31. quản trị rủi ro       | 5                         | 6.021
+32. digital banking       | 5                         | 6.021
+33. it administration     | 5                         | 6.021
+34. integration test      | 5                         | 6.021
+35. phân tích tài chính   | 5                         | 6.021
+36. network management    | 5                         | 6.021
+37. quản trị kinh doanh   | 5                         | 6.021
+38. it hardware           | 5                         | 6.021
+39. tiếng anh thành thạo  | 5                         | 6.021
+40. sales management      | 5                         | 6.021
+41. logical thinking      | 5                         | 6.021
+42. apis                  | 5                         | 6.021
+43. embedded systems      | 5                         | 6.021
+44. security engineer     | 5                         | 6.021
+45. automation tester     | 5                         | 6.021
+46. cisco                 | 5                         | 6.021
+47. chinese               | 5                         | 6.021
+48. business system analyst | 5                         | 6.021
+49. dart                  | 5                         | 6.021
+50. iot                   | 5                         | 6.021
