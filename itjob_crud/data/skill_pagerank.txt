@@ -1,0 +1,36 @@
+==================================================
+       TOP 30 SKILL THEO PAGERANK (Network Centrality)
+==================================================
+Rank   Skill                               Score
+--------------------------------------------------
+1      english                           0.05361
+2      python                            0.04811
+3      sql                               0.04808
+4      ai                                0.04277
+5      java                              0.04140
+6      javascript                        0.02480
+7      aws                               0.02444
+8      agile                             0.02062
+9      cloud                             0.01946
+10     reactjs                           0.01929
+11     project management                0.01891
+12     devops                            0.01554
+13     linux                             0.01436
+14     machine learning                  0.01385
+15     business analysis                 0.01342
+16     spring boot                       0.01201
+17     business development              0.01111
+18     cd                                0.01110
+19     ci                                0.01110
+20     postgresql                        0.01108
+21     database                          0.01064
+22     c++                               0.01049
+23     typescript                        0.01047
+24     tester                            0.01040
+25     api                               0.01030
+26     qa qc                             0.01027
+27     android                           0.00999
+28     llm                               0.00984
+29     nodejs                            0.00921
+30     automation test                   0.00918
+==================================================

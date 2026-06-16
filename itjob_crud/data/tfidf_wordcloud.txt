@@ -1,0 +1,111 @@
+======================================================================
+       TOP 15 KY NANG NOI BAT (TF-IDF) THEO CAP BAC (ĐÃ CLEAN NHIỄU)
+======================================================================
+Level          Skill                              TF-IDF
+----------------------------------------------------------------------
+Fresher        bug tracking                       0.0114
+Fresher        microsoft visual                   0.0114
+Fresher        information systems                0.0114
+Fresher        supply planning                    0.0114
+Fresher        comptia network+                   0.0114
+Fresher        create test case                   0.0114
+Fresher        microprocessor                     0.0114
+Fresher        c/c++ programming                    0.01
+Fresher        it audit                             0.01
+Fresher        dart                                 0.01
+Fresher        back-end                             0.01
+Fresher        .net                               0.0099
+Fresher        c#                                 0.0099
+Fresher        qa                                 0.0074
+Fresher        yii2                               0.0074
+Junior         business analyst                    0.007
+Junior         technical support                  0.0062
+Junior         an toàn thông tin                  0.0055
+Junior         cài đặt phần mềm                   0.0054
+Junior         vận hành hệ thống                  0.0054
+Junior         business development               0.0043
+Junior         quản trị mạng                      0.0039
+Junior         quản trị hệ thống                  0.0039
+Junior         phân tích dữ liệu                  0.0037
+Junior         uat                                0.0036
+Junior         hệ thống mạng                      0.0036
+Junior         thử nghiệm hệ thống                0.0036
+Junior         videos editor                      0.0036
+Junior         endpoint security                  0.0036
+Junior         triển khai dự án                   0.0036
+Lead           automation test                    0.0108
+Lead           english                            0.0066
+Lead           security infrastructure            0.0053
+Lead           chinese communication              0.0053
+Lead           qa qc                               0.005
+Lead           project management                  0.005
+Lead           angular                            0.0048
+Lead           api                                0.0043
+Lead           spring boot                        0.0043
+Lead           rust                               0.0041
+Lead           data flow management               0.0041
+Lead           it planning                        0.0041
+Lead           clear communicator                 0.0041
+Lead           qnx                                0.0041
+Lead           demand team leader                 0.0041
+Manager        project management                 0.0271
+Manager        lean project management            0.0088
+Manager        waterfall methodology              0.0066
+Manager        english                            0.0056
+Manager        product management                  0.005
+Manager        scrum                               0.005
+Manager        digital transformation             0.0048
+Manager        change management                  0.0048
+Manager        team management                    0.0045
+Manager        marketing manager                  0.0044
+Manager        quality management                 0.0044
+Manager        key account manager                0.0044
+Manager        service management                 0.0044
+Manager        security                           0.0044
+Manager        ceo & general management           0.0044
+Mid-level      full-stack                         0.0252
+Mid-level      game design                        0.0248
+Mid-level      database administrator             0.0248
+Mid-level      cms                                0.0248
+Mid-level      data administrator                 0.0193
+Mid-level      unity3d                            0.0193
+Mid-level      pyspark                            0.0193
+Mid-level      mcse                               0.0193
+Mid-level      csdl                               0.0193
+Mid-level      css3                               0.0193
+Mid-level      data architecture                  0.0168
+Mid-level      system security                    0.0168
+Mid-level      business analyst                   0.0168
+Mid-level      abap                               0.0124
+Mid-level      it helpdesk                        0.0124
+Senior         english                            0.0057
+Senior         automation test                    0.0052
+Senior         big data                           0.0052
+Senior         business analysis                   0.004
+Senior         microservices                      0.0038
+Senior         nextjs                             0.0035
+Senior         devsecops                          0.0035
+Senior         microservice                       0.0032
+Senior         gcp                                0.0032
+Senior         unit test                          0.0032
+Senior         b testing                          0.0032
+Senior         spring boot                        0.0031
+Senior         ci                                 0.0031
+Senior         cd                                 0.0031
+Senior         postgresql                         0.0031
+Undefined      computer science                   0.0041
+Undefined      business analysis                  0.0036
+Undefined      english                            0.0035
+Undefined      automation test                    0.0034
+Undefined      technical support                   0.003
+Undefined      microsoft sql server               0.0029
+Undefined      api                                0.0028
+Undefined      solution architecture              0.0027
+Undefined      photoshop                          0.0027
+Undefined      oop                                0.0025
+Undefined      security                           0.0024
+Undefined      autosar                            0.0024
+Undefined      figma                              0.0023
+Undefined      postgresql                         0.0021
+Undefined      interaction design                 0.0021
+======================================================================

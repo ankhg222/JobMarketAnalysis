@@ -1,0 +1,36 @@
+============================================================
+       TOP 30 KỸ NĂNG CÔNG NGHỆ PHỔ BIẾN NHẤT THỊ TRƯỜNG
+============================================================
+Rank   Skill                            Jobs Count
+------------------------------------------------------------
+1      english                                 240
+2      python                                  208
+3      sql                                     201
+4      java                                    169
+5      ai                                      156
+6      project management                      117
+7      agile                                   107
+8      aws                                     106
+9      javascript                              103
+10     business analysis                        91
+11     cloud                                    91
+12     data analysis                            84
+13     reactjs                                  77
+14     devops                                   67
+15     linux                                    66
+16     database                                 66
+17     api                                      65
+18     machine learning                         61
+19     postgresql                               57
+20     oracle                                   56
+21     c++                                      54
+22     tester                                   53
+23     spring boot                              53
+24     team management                          52
+25     typescript                               51
+26     docker                                   49
+27     microservices                            48
+28     c#                                       48
+29     nodejs                                   47
+30     llm                                      47
+============================================================

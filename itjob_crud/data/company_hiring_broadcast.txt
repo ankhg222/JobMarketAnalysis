@@ -1,0 +1,27 @@
+=================================================================================================================================================
+    TOP 20 CONG TY TUYEN DUNG NHIEU NHAT (Broadcast Mode - Phan tich da chieu - Da gộp MB Bank)
+    (Luong trung binh thi truong: 36.6 trieu VND)
+=================================================================================================================================================
+Company                         Jobs   Share%  AvgSal(M)   vsMkt%  MaxSal(M)  AvgYoE  Remote% TopSkill           Levels Hired                  
+-------------------------------------------------------------------------------------------------------------------------------------------------
+MB Bank                          110     5.36       35.6     -2.7       59.7     3.3      0.0 sql                Fresher, Junior/Fresher, Senio
+Bosch Global Software Technolo    67     3.26       37.0      1.1       56.5     4.6      0.0 english            Fresher, Senior, Manager, Lead
+Navigos Search                    56     2.73       42.2     15.3       69.9     3.9      0.0 project management Fresher, Senior, Manager, Lead
+Tập Đoàn Bưu Chính Viễn Thông     25     1.22       31.2    -14.8       31.8     2.9      0.0 linux              Undefined, Junior             
+Ngân Hàng TMCP Đại Chúng Việt     18     0.88       43.3     18.3       57.2     3.9      0.0 mô hình tài chính  Senior, Lead, Undefined, Junio
+FPT Software                      17     0.83       52.1     42.3      127.0     4.2      0.0 aws                Senior, Manager, Undefined    
+NAB Innovation Centre Vietnam     16     0.78       46.2     26.2       63.5     6.2      0.0 english            Senior, Lead, Manager, Undefin
+ITECHWX COMPANY LIMITED           14     0.68       36.1     -1.4       59.7     3.5      0.0 customer service   Senior, Lead, Manager, Undefin
+ABBANK                            12     0.58       42.3     15.6       59.7     3.6      0.0 cloud              Senior, Manager, Undefined    
+Chi Nhánh Trung Tâm Công Nghệ     12     0.58       19.1    -47.8       19.1     1.0      0.0 cloud security     Junior                        
+ITviec Recruitment Consulting     12     0.58       42.7     16.7       63.5     6.0      0.0 database           Fresher, Senior, Manager, Lead
+MONEY FORWARD VIETNAM CO.,LTD     10     0.49       43.8     19.7       56.5     5.5      0.0 english            Senior, Manager, Lead, Undefin
+NEC Vietnam                        9     0.44       47.9     30.9       59.7     6.6      0.0 japanese           Senior, Manager, Lead, Undefin
+One Mount Group                    9     0.44       54.5     48.9       88.9     4.1      0.0 product owner      Senior, Manager, Undefined    
+Shinhan Vietnam Finance Compan     9     0.44       36.7      0.3       53.3     3.8      0.0 data analysis      Fresher, Manager, Undefined   
+KMS Technology                     8     0.39       53.1     45.1       76.2     4.6      0.0 english            Senior, Lead, Undefined       
+Công Ty TNHH Nexon Creative St     8     0.39       30.3    -17.2       31.8     2.8      0.0 game art           Undefined, Junior             
+Ngân hàng TMCP Tiên Phong (TPB     8     0.39       45.4     24.0       50.0     4.5      0.0 phân tích dữ liệu  Senior, Undefined             
+HEINEKEN Vietnam                   8     0.39       40.0      9.3       56.5     4.1      0.0 data analytics     Mid-level, Senior, Manager, Le
+Laidon Group                       8     0.39       40.1      9.6       76.2     2.7      0.0 sap                Mid-level, Senior, Manager, Un
+=================================================================================================================================================

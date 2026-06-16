@@ -1,0 +1,41 @@
+==========================================================================================
+       TOP 5 CONG VIEC LUONG CAO NHAT THEO CAP BAC (Da tach Junior/Fresher)
+==========================================================================================
+Level          Rank Company                   Title                      Salary(M)
+------------------------------------------------------------------------------------------
+Fresher           1 AZAPA ENGINEERING         Kỹ Sư Phát Triển Phần Mềm       50.0
+Fresher           2 Tổng Công ty Bưu điện Việ TRUNG TÂM ĐỔI MỚI SÁNG TẠ       32.5
+Fresher           3 Công Ty TNHH NEXFUL       Backend Developer               31.9
+Fresher           4 CÔNG TY TNHH NEXFUL       Php Backend Developer Int       31.8
+Fresher           5 Tổng Công ty Bưu điện Việ TRUNG TÂM ĐỔI MỚI SÁNG TẠ       30.0
+Junior            1 CÔNG TY TNHH NEXLAB IT SO Golang Backend Engineer         56.1
+Junior            2 Viettel Mozambique (Movit Chuyên Viên Phân Tích Ngh       50.8
+Junior            3 AZAPA ENGINEERING         Kỹ Sư Phát Triển Phần Mềm       50.0
+Junior            4 CÔNG TY TNHH SOCOTEC VIỆT Database Administrator          38.0
+Junior            5 Viettel IT Center (VIC)   Kỹ Sư/ Chuyên Viên Phân T       35.6
+Lead              1 Virtual Security Lab Cybe Technical Lead Golang Upt       88.9
+Lead              2 Nakivo                    Qa Team Lead                    69.9
+Lead              3 Viettel Group             Viettel Solutions - Tech        69.9
+Lead              4 Pizza Hut Digital & Techn Senior Java Software Engi       64.6
+Lead              5 CÔNG TY TNHH NEXLAB IT SO Security Solution Archite       63.8
+Manager           1 VPBank - Https://tuyendun Senior Project Manager -       110.5
+Manager           2 Ngân Hàng Á Châu | ACB    Enterprise Integration Ar      101.6
+Manager           3 FPT Software              Ip Portfolio Manager - Up      101.6
+Manager           4 Công Ty Cổ Phần Tập Đoàn  Giám Đốc Cntt                  101.6
+Manager           5 One Mount Group           Hn Expert/Manager Softwar       88.9
+Mid-level         1 Công ty Cổ phần PayPay    DevOps Engineer                 50.0
+Mid-level         2 DaouKiwoom Innovation     Web Developer                   40.0
+Mid-level         3 Laidon Group              IT Customer Support Speci       33.5
+Mid-level         4 NGÂN HÀNG THƯƠNG MẠI CỔ P CV/CVC/CVCC Kỹ thuật Dữ l       33.5
+Mid-level         5 DaouKiwoom Innovation     Mobile Trading System Dev       33.5
+Senior            1 VPBank - Https://tuyendun Solution Architect Expert      110.5
+Senior            2 NSC Software              Senior Python Developer         85.1
+Senior            3 S4BT Solutions for Busine Mid/Senior .Net Engineer        81.3
+Senior            4 Rakuten Fintech Vietnam C Mid/Senior Ios Developer        81.3
+Senior            5 Alpaca Vietnam            Middle/Senior Business An       76.2
+Undefined         1 FPT Software              Solution Architect - Sala      127.0
+Undefined         2 FPT Software              Solution Architect - Sala      127.0
+Undefined         3 Sti - Simple Tech Investm Hr Director                    114.3
+Undefined         4 Virtuos Studios In Vietna Principle Full-Stack Engi      101.6
+Undefined         5 Viettel Group             Viettel Solutions - Solut       95.3
+==========================================================================================
